@@ -5,6 +5,8 @@ import com.api.productsada.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class ProductoService {
 
@@ -13,6 +15,14 @@ public class ProductoService {
 
     public void save(Producto producto){
         productoRepository.save(producto);
+    }
+
+    public Optional<Producto> getOne(int id){
+        return productoRepository.findById(id);
+    }
+
+    public boolean existsById(int id){
+        return productoRepository.existsById(id);
     }
 
 }
