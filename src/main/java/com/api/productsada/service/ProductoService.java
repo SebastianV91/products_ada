@@ -13,8 +13,8 @@ public class ProductoService {
     @Autowired
     ProductoRepository productoRepository;
 
-    public void save(Producto producto){
-        productoRepository.save(producto);
+    public Producto save(Producto producto){
+        return productoRepository.save(producto);
     }
 
     public Optional<Producto> getOne(int id){
